@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F5457">
+<title>SIM-K — Sistem Informasi Manajemen Keuangan</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%230F5457'/%3E%3Cpath d='M20 7C14.5 12 11.5 16.5 11.5 22a8.5 8.5 0 0017 0c0-5.500-3-10-8.500-15z' fill='%233FB0AE'/%3E%3Cpath d='M20 14c-3 3-5.500 6-5.500 9a5.500 5.500 0 0011 0c0-3-2.500-6-5.500-9z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  html, body { margin:0; height:100%; background:#0B3335; font-family:system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .loading { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:#CFE6E5; font-size:15px; letter-spacing:.02em; }
+  .loading b { font-size:34px; color:#fff; font-family:Georgia, "Times New Roman", serif; letter-spacing:.03em; }
+  .spin { width:26px; height:26px; border:3px solid rgba(255,255,255,.25); border-top-color:#C9A55C; border-radius:50%; animation:s .8s linear infinite; }
+  @keyframes s { to { transform:rotate(360deg); } }
+  iframe { position:fixed; inset:0; width:100%; height:100%; border:0; display:block; background:transparent; }
+  .err { position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:24px; text-align:center; color:#fff; background:#0B3335; line-height:1.6; }
+</style>
+</head>
+<body>
+<div class="loading"><b>SIM-K</b><div class="spin"></div><div>Memuat...</div></div>
+<div class="err" id="err"></div>
+<iframe id="app" title="SIM-K" allow="clipboard-write; fullscreen"></iframe>
+<script>
+  // GANTI tulisan di dalam tanda kutip dengan alamat aplikasi Apps Script Anda (yang berakhiran /exec).
+  var APP_URL = 'https://script.google.com/macros/s/AKfycbw1r6NcXU0KRG2VAfHz7KUI8EAMrSUVzGo4NtuBzGXN3-7cP-egyViHtVjS-XR8rZh8Uw/exec';
+
+  if (/^https:\/\/script\.google\.com\/macros\/s\/[^\s]+\/exec$/.test(APP_URL)) {
+    document.getElementById('app').src = APP_URL;
+  } else {
+    var e = document.getElementById('err');
+    e.style.display = 'flex';
+    e.textContent = 'Alamat aplikasi belum diisi. Buka file index.html, lalu ganti tulisan TEMPEL_ALAMAT_APPS_SCRIPT_DI_SINI dengan alamat aplikasi Apps Script Anda.';
+  }
+</script>
+</body>
+</html>
